@@ -2,7 +2,7 @@
     "name": "gapul self-build",
     "identifier": "net.gapul.altstore-source",
     "subtitle": "自作 iOS アプリ(KeePassium Pro / Blink)",
-    "iconURL": "https://github.com/gapul/altstore-source/releases/download/v1/keepassium.png",
+    "iconURL": "https://github.com/gapul.png",
     "website": "https://github.com/gapul/altstore-source",
     "tintColor": "#00A0E0",
     "apps": [
