@@ -1,0 +1,55 @@
+{
+  "name": "gapul self-build",
+  "identifier": "net.gapul.altstore-source",
+  "subtitle": "自作 iOS アプリ(KeePassium Pro / Blink)",
+  "iconURL": "https://github.com/gapul/altstore-source/releases/download/v1/keepassium.png",
+  "website": "https://github.com/gapul/altstore-source",
+  "tintColor": "#00A0E0",
+  "apps": [
+    {
+      "name": "KeePassium Pro",
+      "bundleIdentifier": "net.gapul.keepassium",
+      "developerName": "gapul (self-build)",
+      "subtitle": "Premium password manager, self-built free",
+      "localizedDescription": "KeePassium Pro — premium 全解錠のセルフビルド版。KeePass 互換のパスワードマネージャ。Intune を除去し net.gapul 名前空間で再署名。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/v1/keepassium.png",
+      "tintColor": "#00A0E0",
+      "category": "utilities",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "2.6",
+          "buildVersion": "173",
+          "date": "2026-07-28",
+          "localizedDescription": "初回セルフビルド(premium 解錠 / Intune 除去 / net.gapul 改名)。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/v1/KeePassiumPro-net.gapul-unsigned.ipa",
+          "size": 24669325,
+          "minOSVersion": "17.0"
+        }
+      ]
+    },
+    {
+      "name": "Blink Shell",
+      "bundleIdentifier": "net.gapul.blink",
+      "developerName": "gapul (self-build)",
+      "subtitle": "Professional SSH/mosh terminal, self-built free",
+      "localizedDescription": "Blink Shell — GPL のプロ向け SSH/mosh クライアントをセルフビルドで無料化。net.gapul 名前空間で再署名。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/v1/blink.png",
+      "tintColor": "#1F1F1F",
+      "category": "developer",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "18.7.0",
+          "buildVersion": "1097",
+          "date": "2026-07-28",
+          "localizedDescription": "初回セルフビルド(全機能 / net.gapul 改名 / Push・iCloud 除去)。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/v1/Blink-net.gapul-unsigned.ipa",
+          "size": 62805557,
+          "minOSVersion": "17.6"
+        }
+      ]
+    }
+  ],
+  "news": []
+}
