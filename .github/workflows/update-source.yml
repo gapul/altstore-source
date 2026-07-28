@@ -1,0 +1,109 @@
+name: update-source
+
+# keepassium-ios / blink-ios の最新リリースを読み、source.json の各アプリ versions[0] を
+# その .ipa に更新して commit する。リリースがまだ無いアプリは既存エントリを維持(段階移行が安全)。
+
+on:
+  repository_dispatch:
+    types: [refresh-source]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 16 * * *'      # ビルド系(15:00/15:30 UTC)の後、JST 1時ごろ
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate source.json from build repos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, subprocess, tempfile, os, urllib.request
+          from datetime import datetime, timezone
+
+          # bundleId -> ビルドリポ
+          REPO = {
+              "net.gapul.keepassium": "gapul/keepassium-ios",
+              "net.gapul.blink":      "gapul/blink-ios",
+          }
+
+          def gh_json(path):
+              out = subprocess.run(["gh","api",path], capture_output=True, text=True)
+              if out.returncode != 0:
+                  return None
+              return json.loads(out.stdout)
+
+          src = json.load(open("source.json"))
+          changed = False
+
+          for app in src.get("apps", []):
+              bid = app.get("bundleIdentifier")
+              repo = REPO.get(bid)
+              if not repo:
+                  continue
+              rel = gh_json(f"repos/{repo}/releases/latest")
+              if not rel or "assets" not in rel:
+                  print(f"{bid}: リリース無し → 現状維持")
+                  continue
+              assets = rel["assets"]
+              ipa = next((a for a in assets if a["name"].lower().endswith(".ipa")), None)
+              meta = next((a for a in assets if a["name"] == "meta.env"), None)
+              if not ipa:
+                  print(f"{bid}: .ipa アセット無し → 現状維持")
+                  continue
+
+              version = rel["tag_name"]
+              build = ""
+              minos = app.get("versions",[{}])[0].get("minOSVersion","17.0")
+              if meta:
+                  try:
+                      with urllib.request.urlopen(meta["browser_download_url"]) as r:
+                          for line in r.read().decode().splitlines():
+                              if line.startswith("VERSION="): version = line.split("=",1)[1].strip()
+                              elif line.startswith("BUILD="): build = line.split("=",1)[1].strip()
+                              elif line.startswith("MINOS="): minos = line.split("=",1)[1].strip()
+                  except Exception as e:
+                      print(f"{bid}: meta.env 読めず({e})")
+
+              date = (rel.get("published_at") or "")[:10] or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+              newv = {
+                  "version": version,
+                  "buildVersion": build or version,
+                  "date": date,
+                  "localizedDescription": f"upstream {rel['tag_name']} を自動再ビルド。net.gapul 名前空間・SideStore 用 unsigned。",
+                  "downloadURL": ipa["browser_download_url"],
+                  "size": ipa["size"],
+                  "minOSVersion": minos,
+              }
+              cur = app.get("versions",[{}])[0] if app.get("versions") else {}
+              if cur.get("downloadURL") != newv["downloadURL"] or cur.get("version") != newv["version"] or cur.get("size") != newv["size"]:
+                  app["versions"] = [newv]
+                  changed = True
+                  print(f"{bid}: 更新 → {version} ({ipa['size']} bytes)")
+              else:
+                  print(f"{bid}: 変更なし")
+
+          if changed:
+              json.dump(src, open("source.json","w"), ensure_ascii=False, indent=4)
+              print("source.json updated")
+          else:
+              print("no changes")
+          PY
+
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet source.json; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add source.json
+            git commit -m "chore: refresh source.json from build repos"
+            git push
+          else
+            echo "no changes to commit"
+          fi
