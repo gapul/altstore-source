@@ -49,6 +49,28 @@
           "minOSVersion": "17.6"
         }
       ]
+    },
+    {
+      "name": "Mangayomi",
+      "bundleIdentifier": "com.kodjodevf.mangayomi",
+      "developerName": "kodjodevf",
+      "subtitle": "漫画・小説リーダー & アニメ視聴",
+      "localizedDescription": "Mangayomi — 漫画/小説を読み、アニメを視聴できるオープンソース(Flutter)アプリ。本家 iOS ビルドをそのまま配信。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/v1/mangayomi.png",
+      "tintColor": "#2E7D32",
+      "category": "entertainment",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.8.0",
+          "buildVersion": "108",
+          "date": "2026-07-24",
+          "localizedDescription": "本家 v0.8.0(kodjodevf/mangayomi) iOS ビルド。",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.0/Mangayomi-v0.8.0-ios.ipa",
+          "size": 47726662,
+          "minOSVersion": "13.0"
+        }
+      ]
     }
   ],
   "news": []
