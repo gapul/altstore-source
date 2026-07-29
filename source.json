@@ -23,7 +23,7 @@
                     "date": "2026-07-28",
                     "localizedDescription": "upstream 2.6.173 を自動再ビルド。net.gapul 名前空間・SideStore 用 unsigned。",
                     "downloadURL": "https://github.com/gapul/keepassium-ios/releases/download/2.6.173/KeePassiumPro-net.gapul.ipa",
-                    "size": 24670085,
+                    "size": 24670080,
                     "minOSVersion": "17.0"
                 }
             ]
@@ -45,7 +45,7 @@
                     "date": "2026-07-28",
                     "localizedDescription": "upstream raw-latest を自動再ビルド。net.gapul 名前空間・SideStore 用 unsigned。",
                     "downloadURL": "https://github.com/gapul/blink-ios/releases/download/raw-latest/Blink-net.gapul.ipa",
-                    "size": 62805955,
+                    "size": 62833836,
                     "minOSVersion": "17.6"
                 }
             ]
