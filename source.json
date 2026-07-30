@@ -21,9 +21,9 @@
           "version": "2.6",
           "buildVersion": "173",
           "date": "2026-07-30",
-          "localizedDescription": "App Group を net.gapul に修正(FileKeeper 起動クラッシュ解消)。upstream 2.6.173 自動再ビルド・SideStore 用 unsigned。",
+          "localizedDescription": "App Group 未プロビジョニング環境でも起動するようFileKeeper等をローカル退避にフォールバック。",
           "downloadURL": "https://github.com/gapul/keepassium-ios/releases/download/2.6.173/KeePassiumPro-net.gapul.ipa",
-          "size": 24669318,
+          "size": 24669059,
           "minOSVersion": "17.0"
         }
       ]
