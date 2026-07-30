@@ -43,9 +43,9 @@
           "version": "18.7.0",
           "buildVersion": "1097",
           "date": "2026-07-30",
-          "localizedDescription": "upstream raw-latest を自動再ビルド。net.gapul 名前空間・SideStore 用 unsigned。App Group 未プロビジョニング環境での起動クラッシュを修正。",
+          "localizedDescription": "upstream raw-latest を自動再ビルド。net.gapul 名前空間・SideStore 用 unsigned。App Group 未プロビジョニング & FileProvider 未構成環境での起動クラッシュを修正。",
           "downloadURL": "https://github.com/gapul/blink-ios/releases/download/raw-latest/Blink-net.gapul.ipa",
-          "size": 62805727,
+          "size": 62805973,
           "minOSVersion": "17.6"
         }
       ]
