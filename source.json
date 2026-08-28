@@ -71,6 +71,28 @@
           "minOSVersion": "13.0"
         }
       ]
+    },
+    {
+      "name": "知るカフェ",
+      "bundleIdentifier": "net.gapul.shirucafe",
+      "developerName": "gapul (self-build)",
+      "subtitle": "知るカフェ 非公式クライアント",
+      "localizedDescription": "知るカフェ 非公式クライアント。ログイン・スタンプ表示・来店履歴・ドリンク注文QR。APK解析ベースのセルフビルド（net.gapul 名前空間）。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/shirucafe-0.1.0/shirucafe.png",
+      "tintColor": "#C93648",
+      "category": "lifestyle",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.1.0",
+          "buildVersion": "1",
+          "date": "2026-08-28",
+          "localizedDescription": "初版。ログイン/スタンプ/来店履歴/ドリンク/注文QR全画面。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/shirucafe-0.1.0/Shiru.ipa",
+          "size": 884440,
+          "minOSVersion": "16.0"
+        }
+      ]
     }
   ],
   "news": []
