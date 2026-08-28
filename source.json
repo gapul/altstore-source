@@ -137,6 +137,28 @@
           "minOSVersion": "15.0"
         }
       ]
+    },
+    {
+      "name": "Audiobookshelf",
+      "bundleIdentifier": "com.audiobookshelf.app",
+      "developerName": "gapul (self-build)",
+      "subtitle": "セルフホスト オーディオブック/ポッドキャスト クライアント",
+      "localizedDescription": "Audiobookshelf — セルフホスト型オーディオブック&ポッドキャストサーバーの公式モバイルクライアント。ストリーミング/ダウンロード・再生位置同期・スリープタイマー対応。セルフビルド（gapul/audiobookshelf-app、advplyr/audiobookshelf-app のフォーク）。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/abs-0.13.0/1024.png",
+      "tintColor": "#232323",
+      "category": "reading",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.13.0",
+          "buildVersion": "1",
+          "date": "2026-08-28",
+          "localizedDescription": "セルフホスト オーディオブック/ポッドキャスト クライアント。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/abs-0.13.0/Audiobookshelf-unsigned.ipa",
+          "size": 11664734,
+          "minOSVersion": "14.0"
+        }
+      ]
     }
   ],
   "news": []
