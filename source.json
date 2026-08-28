@@ -159,6 +159,28 @@
           "minOSVersion": "14.0"
         }
       ]
+    },
+    {
+      "name": "JP Phone Directory",
+      "bundleIdentifier": "net.gapul.JPPhoneDirectory",
+      "developerName": "gapul (self-build)",
+      "subtitle": "オープンデータ発信者名表示（Call Directory）",
+      "localizedDescription": "JP Phone Directory — 総務省/公的オープンデータ由来の事業者番号→名称を端末内DBで持ち、着信時に発信者名を表示する Call Directory アプリ。外部の評判DBに依存しないadblock型（データはアプリ内で購読して更新）。セルフビルド（gapul/jp-phone-opendata）。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/jpphone-0.3.0/jpp-icon.png",
+      "tintColor": "#0369A1",
+      "category": "utilities",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.3.0",
+          "buildVersion": "1",
+          "date": "2026-08-28",
+          "localizedDescription": "オープンデータ由来の発信者名表示（Call Directory）。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/jpphone-0.3.0/JPPhoneDirectory-unsigned.ipa",
+          "size": 252403,
+          "minOSVersion": "17.0"
+        }
+      ]
     }
   ],
   "news": []
