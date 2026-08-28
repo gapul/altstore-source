@@ -115,6 +115,28 @@
           "minOSVersion": "18.0"
         }
       ]
+    },
+    {
+      "name": "Readest",
+      "bundleIdentifier": "com.bilingify.readest",
+      "developerName": "gapul (self-build)",
+      "subtitle": "EPUB/PDF/MOBI 対応の高機能 ebook リーダー",
+      "localizedDescription": "Readest — Tauri 製のオープンソース電子書籍リーダー（EPUB/PDF/MOBI/CBZ）。ハイライト・注釈・辞書・全文検索・クラウド同期に対応。セルフビルド（gapul/readest）。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/readest-0.12.1/readest-icon.png",
+      "tintColor": "#B45309",
+      "category": "reading",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.12.1",
+          "buildVersion": "1",
+          "date": "2026-08-28",
+          "localizedDescription": "EPUB/PDF/MOBI リーダー。注釈・辞書・全文検索・同期対応。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/readest-0.12.1/Readest-unsigned.ipa",
+          "size": 37458707,
+          "minOSVersion": "15.0"
+        }
+      ]
     }
   ],
   "news": []
