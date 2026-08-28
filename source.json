@@ -144,7 +144,7 @@
       "developerName": "gapul (self-build)",
       "subtitle": "セルフホスト オーディオブック/ポッドキャスト クライアント",
       "localizedDescription": "Audiobookshelf — セルフホスト型オーディオブック&ポッドキャストサーバーの公式モバイルクライアント。ストリーミング/ダウンロード・再生位置同期・スリープタイマー対応。セルフビルド（gapul/audiobookshelf-app、advplyr/audiobookshelf-app のフォーク）。",
-      "iconURL": "https://github.com/gapul/altstore-source/releases/download/abs-0.13.0/1024.png",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/abs-0.13.0/audiobookshelf-icon.png",
       "tintColor": "#232323",
       "category": "reading",
       "screenshotURLs": [],
