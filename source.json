@@ -93,6 +93,28 @@
           "minOSVersion": "16.0"
         }
       ]
+    },
+    {
+      "name": "Amgi",
+      "bundleIdentifier": "com.amgiapp.AmgiApp",
+      "developerName": "gapul (self-build)",
+      "subtitle": "Anki互換 オフラインファースト flashcard",
+      "localizedDescription": "Amgi — 公式Anki RustバックエンドをC FFIで駆動する、オフラインファーストのAnki互換iOSフラッシュカードクライアント。同期サーバ対応。セルフビルド（amgi fork）。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/amgi-0.1.2/amgi-icon.png",
+      "tintColor": "#2C7BE5",
+      "category": "education",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.1.2",
+          "buildVersion": "5",
+          "date": "2026-08-28",
+          "localizedDescription": "Anki互換フラッシュカード（公式Rustバックエンド）。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/amgi-0.1.2/AmgiApp-unsigned.ipa",
+          "size": 28472794,
+          "minOSVersion": "18.0"
+        }
+      ]
     }
   ],
   "news": []
