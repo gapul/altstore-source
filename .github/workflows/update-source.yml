@@ -1,12 +1,17 @@
 name: update-source
 
-# keepassium-ios / blink-ios の最新リリースを読み、source.json の各アプリ versions[0] を
-# その .ipa に更新して commit する。リリースがまだ無いアプリは既存エントリを維持(段階移行が安全)。
+# 各アプリの最新ビルドを見て source.json を書き換える。追随先の対応表は
+# scripts/refresh_source.py にあり、アプリを増やすときもそこだけ触れば足りる。
 
 on:
+  # ビルド側リポ(keepassium-ios / blink-ios / jp-phone-opendata)がリリース後に叩く
   repository_dispatch:
     types: [refresh-source]
+  # 手組み .ipa をこのリポにアップロードしたとき。トークンが要らないので確実
+  release:
+    types: [published]
   workflow_dispatch:
+  # 上のどれも起きない上流(Mangayomi など)を拾う網
   schedule:
     - cron: '0 16 * * *'      # ビルド系(15:00/15:30 UTC)の後、JST 1時ごろ
 
@@ -17,107 +22,16 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      # release イベントで起動した回はタグの detached HEAD になり、最後の push が
+      # 行き先を失う。書き戻す先は常に main。
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - name: Regenerate source.json from build repos
+      - name: Point source.json at the newest builds
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          python3 - <<'PY'
-          import json, subprocess, tempfile, os, urllib.request
-          from datetime import datetime, timezone
-
-          # bundleId -> ビルドリポ
-          REPO = {
-              "net.gapul.keepassium": "gapul/keepassium-ios",
-              "net.gapul.blink":      "gapul/blink-ios",
-              "net.gapul.JPPhoneDirectory": "gapul/jp-phone-opendata",
-          }
-
-          # そのリポが .ipa 以外のリリースも出す場合、どのタグを見るかを絞る。
-          # jp-phone-opendata は月次で 1.7GB のデータリリース(tag: lists)を出すので、
-          # releases/latest がそちらになると .ipa が見つからず追随が止まる。
-          TAG_PREFIX = {
-              "net.gapul.JPPhoneDirectory": "apps-",
-          }
-
-          def gh_json(path):
-              out = subprocess.run(["gh","api",path], capture_output=True, text=True)
-              if out.returncode != 0:
-                  return None
-              return json.loads(out.stdout)
-
-          src = json.load(open("source.json"))
-          changed = False
-
-          for app in src.get("apps", []):
-              bid = app.get("bundleIdentifier")
-              repo = REPO.get(bid)
-              if not repo:
-                  continue
-              prefix = TAG_PREFIX.get(bid)
-              if prefix:
-                  releases = gh_json(f"repos/{repo}/releases?per_page=100") or []
-                  matching = [r for r in releases
-                              if r.get("tag_name","").startswith(prefix)
-                              and not r.get("draft") and not r.get("prerelease")]
-                  # published_at 降順。API はほぼこの順だが依存しない。
-                  rel = max(matching, key=lambda r: r.get("published_at") or "", default=None)
-              else:
-                  rel = gh_json(f"repos/{repo}/releases/latest")
-              if not rel or "assets" not in rel:
-                  print(f"{bid}: リリース無し → 現状維持")
-                  continue
-              assets = rel["assets"]
-              ipa = next((a for a in assets if a["name"].lower().endswith(".ipa")), None)
-              meta = next((a for a in assets if a["name"] == "meta.env"), None)
-              if not ipa:
-                  print(f"{bid}: .ipa アセット無し → 現状維持")
-                  continue
-
-              version = rel["tag_name"]
-              build = ""
-              minos = app.get("versions",[{}])[0].get("minOSVersion","17.0")
-              if meta:
-                  try:
-                      with urllib.request.urlopen(meta["browser_download_url"]) as r:
-                          for line in r.read().decode().splitlines():
-                              if line.startswith("VERSION="): version = line.split("=",1)[1].strip()
-                              elif line.startswith("BUILD="): build = line.split("=",1)[1].strip()
-                              elif line.startswith("MINOS="): minos = line.split("=",1)[1].strip()
-                  except Exception as e:
-                      print(f"{bid}: meta.env 読めず({e})")
-
-              # タグが日付のリポでは meta.env が唯一のバージョン情報。無いまま進むと
-              # version に "apps-20260829" のような値を書いてしまうので、触らない。
-              if prefix and not meta:
-                  print(f"{bid}: meta.env 無し(タグは日付) → 現状維持")
-                  continue
-
-              date = (rel.get("published_at") or "")[:10] or datetime.now(timezone.utc).strftime("%Y-%m-%d")
-              newv = {
-                  "version": version,
-                  "buildVersion": build or version,
-                  "date": date,
-                  "localizedDescription": f"upstream {rel['tag_name']} を自動再ビルド。net.gapul 名前空間・SideStore 用 unsigned。",
-                  "downloadURL": ipa["browser_download_url"],
-                  "size": ipa["size"],
-                  "minOSVersion": minos,
-              }
-              cur = app.get("versions",[{}])[0] if app.get("versions") else {}
-              if cur.get("downloadURL") != newv["downloadURL"] or cur.get("version") != newv["version"] or cur.get("size") != newv["size"]:
-                  app["versions"] = [newv]
-                  changed = True
-                  print(f"{bid}: 更新 → {version} ({ipa['size']} bytes)")
-              else:
-                  print(f"{bid}: 変更なし")
-
-          if changed:
-              json.dump(src, open("source.json","w"), ensure_ascii=False, indent=4)
-              print("source.json updated")
-          else:
-              print("no changes")
-          PY
+        run: python3 scripts/refresh_source.py
 
       - name: Commit if changed
         run: |
