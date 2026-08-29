@@ -31,6 +31,14 @@ jobs:
           REPO = {
               "net.gapul.keepassium": "gapul/keepassium-ios",
               "net.gapul.blink":      "gapul/blink-ios",
+              "net.gapul.JPPhoneDirectory": "gapul/jp-phone-opendata",
+          }
+
+          # そのリポが .ipa 以外のリリースも出す場合、どのタグを見るかを絞る。
+          # jp-phone-opendata は月次で 1.7GB のデータリリース(tag: lists)を出すので、
+          # releases/latest がそちらになると .ipa が見つからず追随が止まる。
+          TAG_PREFIX = {
+              "net.gapul.JPPhoneDirectory": "apps-",
           }
 
           def gh_json(path):
@@ -47,7 +55,16 @@ jobs:
               repo = REPO.get(bid)
               if not repo:
                   continue
-              rel = gh_json(f"repos/{repo}/releases/latest")
+              prefix = TAG_PREFIX.get(bid)
+              if prefix:
+                  releases = gh_json(f"repos/{repo}/releases?per_page=100") or []
+                  matching = [r for r in releases
+                              if r.get("tag_name","").startswith(prefix)
+                              and not r.get("draft") and not r.get("prerelease")]
+                  # published_at 降順。API はほぼこの順だが依存しない。
+                  rel = max(matching, key=lambda r: r.get("published_at") or "", default=None)
+              else:
+                  rel = gh_json(f"repos/{repo}/releases/latest")
               if not rel or "assets" not in rel:
                   print(f"{bid}: リリース無し → 現状維持")
                   continue
@@ -70,6 +87,12 @@ jobs:
                               elif line.startswith("MINOS="): minos = line.split("=",1)[1].strip()
                   except Exception as e:
                       print(f"{bid}: meta.env 読めず({e})")
+
+              # タグが日付のリポでは meta.env が唯一のバージョン情報。無いまま進むと
+              # version に "apps-20260829" のような値を書いてしまうので、触らない。
+              if prefix and not meta:
+                  print(f"{bid}: meta.env 無し(タグは日付) → 現状維持")
+                  continue
 
               date = (rel.get("published_at") or "")[:10] or datetime.now(timezone.utc).strftime("%Y-%m-%d")
               newv = {
