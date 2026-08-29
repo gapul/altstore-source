@@ -172,6 +172,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.3.1",
+          "buildVersion": "1",
+          "date": "2026-08-29",
+          "localizedDescription": "カタログの配信先を固定タグへ移したことに伴う修正。0.3.0 は候補リストを取得できません。",
+          "downloadURL": "https://github.com/gapul/jp-phone-opendata/releases/download/apps-20260829/JPPhoneDirectory-unsigned.ipa",
+          "size": 252402,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "0.3.0",
           "buildVersion": "1",
           "date": "2026-08-28",
