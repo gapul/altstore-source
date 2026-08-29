@@ -129,11 +129,11 @@
       "versions": [
         {
           "version": "0.12.1",
-          "buildVersion": "1",
+          "buildVersion": "2",
           "date": "2026-08-28",
-          "localizedDescription": "EPUB/PDF/MOBI リーダー。注釈・辞書・全文検索・同期対応。",
+          "localizedDescription": "EPUB/PDF/MOBI リーダー。アプリアイコンを正規のものに修正。",
           "downloadURL": "https://github.com/gapul/altstore-source/releases/download/readest-0.12.1/Readest-unsigned.ipa",
-          "size": 37458707,
+          "size": 38494575,
           "minOSVersion": "15.0"
         }
       ]
