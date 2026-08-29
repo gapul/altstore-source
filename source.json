@@ -129,7 +129,7 @@
       "versions": [
         {
           "version": "0.12.1",
-          "buildVersion": "2",
+          "buildVersion": "0.12.1",
           "date": "2026-08-28",
           "localizedDescription": "EPUB/PDF/MOBI リーダー。アプリアイコンを正規のものに修正。",
           "downloadURL": "https://github.com/gapul/altstore-source/releases/download/readest-0.12.1/Readest-unsigned.ipa",
@@ -151,7 +151,7 @@
       "versions": [
         {
           "version": "0.13.0",
-          "buildVersion": "1",
+          "buildVersion": "43",
           "date": "2026-08-28",
           "localizedDescription": "セルフホスト オーディオブック/ポッドキャスト クライアント。",
           "downloadURL": "https://github.com/gapul/altstore-source/releases/download/abs-0.13.0/Audiobookshelf-unsigned.ipa",
