@@ -62,6 +62,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.3",
+          "buildVersion": "0.9.3",
+          "date": "2026-09-14",
+          "localizedDescription": "## What's Changed\n* feat: refresh the library on a schedule by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/975\n* fix(player): persist completed episodes before navigation by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/979\n* fix(downloads): preserve queue and select the next unread chapters by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/978\n* Fixes memory and bugs where it would lag over time by @not-akari in https://github.com/kodjodevf/mangayomi/pull/977\n* fix: keep Discord chapter presence current by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/981\n* fix: decode current VOE video payloads by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/982\n* fix(restore): preserve Kotatsu category assignments by @mrandhawa14 in https://g…",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.3/Mangayomi-v0.9.3-ios.ipa",
+          "size": 114239272,
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "0.9.2",
           "buildVersion": "0.9.2",
           "date": "2026-09-03",
@@ -95,15 +104,6 @@
           "localizedDescription": "## What's Changed\r\n* Fix migration screen row overflow by @not-akari in https://github.com/kodjodevf/mangayomi/pull/884\r\n* Fix History screen scroll lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/885\r\n* Fix Updates and chapter list scroll lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/886\r\n* Fix warning by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/887\r\n* New feature: backup encryption by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/888\r\n* fix: read downloaded chapters from disk instead of the source by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/889\r\n* Fix chapter sort incorrectly and Added Missing Chapter Header by @not-akari in https://github.com/kodjodevf/mangayomi/pull/890\r\n* Fix overflow in global search result…",
           "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.9/Mangayomi-v0.8.9-ios.ipa",
           "size": 108580643,
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.8.0",
-          "buildVersion": "108",
-          "date": "2026-07-24",
-          "localizedDescription": "本家 v0.8.0(kodjodevf/mangayomi) iOS ビルド。",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.0/Mangayomi-v0.8.0-ios.ipa",
-          "size": 47726662,
           "minOSVersion": "13.0"
         }
       ]
