@@ -62,6 +62,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.7",
+          "buildVersion": "0.9.7",
+          "date": "2026-09-22",
+          "localizedDescription": "# What's New\r\n\r\n## Reader\r\n\r\n* **Reliable Resume to Saved Position** :\r\n  * Reopening a chapter in continuous vertical reading now jumps directly and instantly to the page where you left off, even before all images have finished loading.\r\n  * Eliminated the issue where the reader would land on a neighboring page or spinner instead of the correct saved position.\r\n\r\n* **Smoother Zoomed Panning & Inertia** (#1021):\r\n  * Dragging a zoomed page now follows your finger precisely using real movement delta instead of an accumulated offset, making panning far more responsive.\r\n  * Flinging a zoomed page now carries natural momentum with a longer, smoother coast animation.\r\n  * Overscrolling past the edge of a zoomed page automatically transfers the momentum to the page list scroll, allowing seamles…",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.7/Mangayomi-v0.9.7-ios.ipa",
+          "size": 114301894,
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "0.9.6",
           "buildVersion": "0.9.6",
           "date": "2026-09-19",
@@ -95,15 +104,6 @@
           "localizedDescription": "## What's Changed\n* feat: refresh the library on a schedule by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/975\n* fix(player): persist completed episodes before navigation by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/979\n* fix(downloads): preserve queue and select the next unread chapters by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/978\n* Fixes memory and bugs where it would lag over time by @not-akari in https://github.com/kodjodevf/mangayomi/pull/977\n* fix: keep Discord chapter presence current by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/981\n* fix: decode current VOE video payloads by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/982\n* fix(restore): preserve Kotatsu category assignments by @mrandhawa14 in https://g…",
           "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.3/Mangayomi-v0.9.3-ios.ipa",
           "size": 114239272,
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.9.2",
-          "buildVersion": "0.9.2",
-          "date": "2026-09-03",
-          "localizedDescription": "## What's Changed\r\n* Add assets to constant file by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/968\r\n* fix: triage error reports and resolve reported crashes by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/970\r\n* feat(experimental): add support for Aidoku extensions by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/969\r\n* Optimize local image-folder pages and image handling by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/973\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.1...v0.9.2",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa",
-          "size": 114010180,
           "minOSVersion": "13.0"
         }
       ]
