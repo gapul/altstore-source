@@ -164,6 +164,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.12.16",
+          "buildVersion": "0.12.16",
+          "date": "2026-10-14",
+          "localizedDescription": "Readest (Tauri ebook reader) — unsigned iOS build for AltStore. Self-built from gapul/readest at 818fc55ef: upstream v0.12.16, built as self-hosted with every call to Readest's own servers cut (no account, cloud sync, telemetry, Sentry or update checks). aarch64 device.",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/readest-0.12.16/Readest-unsigned.ipa",
+          "size": 30844335,
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.12.1",
           "buildVersion": "0.12.1",
           "date": "2026-08-28",
