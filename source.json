@@ -62,6 +62,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.95",
+          "buildVersion": "0.9.95",
+          "date": "2026-11-01",
+          "localizedDescription": "## Why 0.9.95 and not 1.0.0?\r\n\r\nThis release has almost everything planned for 1.0.0: a new design, a rebuilt player and hundreds of fixes. But so much has changed that it needs testing on more devices and libraries than we can cover ourselves.\r\n\r\nSo 0.9.95 is the last step before 1.0.0. The goal now is stability, not new features. If something breaks or looks wrong, please [open an issue](https://github.com/kodjodevf/mangayomi/issues) with your device and app version. 1.0.0 will come once this version has proven solid.\r\n\r\n## Highlights\r\n\r\n* **Shiori, a new design for the whole app:** every screen has been redrawn on one design system, with new navigation, transitions and an ergonomic pass throughout (#1077).\r\n* **A rebuilt video player:** new controls on phone, desktop and TV, plus video…",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.95/Mangayomi-v0.9.95-ios.ipa",
+          "size": 115450399,
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "0.9.9",
           "buildVersion": "0.9.9",
           "date": "2026-10-12",
@@ -95,15 +104,6 @@
           "localizedDescription": "# What's New\r\n\r\n## 📖 Reader & Manga\r\n\r\n* **Intelligent Double-Page Spreads & RTL Reading** (#1018, #1008):\r\n  * Wide and landscape double-page spreads are now shown seamlessly on their own full-width screen instead of being awkwardly paired with single pages.\r\n  * Switching between single and double-page view, rotating your device, or changing reading modes no longer resets your progress back to chapter 1.\r\n  * Resuming chapters in Right-to-Left (manga) reading mode now starts in the correct direction without layout flipping.\r\n* **Instant Border Cropping & Cache Improvements**:\r\n  * Turning border crop on or off in Webtoon / continuous reading now applies instantly without re-downloading the images.\r\n  * Fixed an issue where resuming a chapter at a saved page could cause an infinite loadin…",
           "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.6/Mangayomi-v0.9.6-ios.ipa",
           "size": 114296014,
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.9.5",
-          "buildVersion": "0.9.5",
-          "date": "2026-09-18",
-          "localizedDescription": "## What's Changed\r\n\r\n## Reader & Novels\r\n\r\n* **Smart Double-Page Mode** (#1008):\r\n  * Automatically switch to double-page view based on screen orientation (landscape/portrait).\r\n  * Chapter transition pages now remain isolated for a natural, seamless reading experience.\r\n* **Complete Novel Reader Overhaul** (#1014):\r\n  * Added double-page reading mode support for novels.\r\n  * Added a **Keep screen on** toggle to prevent the display from turning off while reading (#1014).\r\n  * Added smooth auto-scroll with fine-tuned speed controls.\r\n  * Redesigned Novel bottom bar and settings sheets: more compact, with quick font-size adjustments.\r\n  * Centralized all novel settings under **More > Settings > Novel Reader** (#1014).\r\n* **Smooth Webtoon Scrolling**:\r\n  * Much smoother continuous scrolling w…",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.5/Mangayomi-v0.9.5-ios.ipa",
-          "size": 114289495,
           "minOSVersion": "13.0"
         }
       ]
