@@ -62,6 +62,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.96",
+          "buildVersion": "0.9.96",
+          "date": "2026-11-14",
+          "localizedDescription": "## What's Changed\n* fix(appearance): bring back the app-wide Google Fonts picker by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1127\n* fix: make the genre chip's searches work, in the source and the library by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1129\n* fix(library) select between option by @Lukas-DS in https://github.com/kodjodevf/mangayomi/pull/1131\n* fix(js): send PUT, DELETE and PATCH from the extension client by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1132\n* fix(migrate): search a few sources at a time and open the dialog at once by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1141\n* fix(sync): persist since and lastSync in one awaited write by @sergwei in https://github.com/kodjodevf/mangayomi/pull/1146\n* fix(filters):…",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.96/Mangayomi-v0.9.96-ios.ipa",
+          "size": 117340839,
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "0.9.95",
           "buildVersion": "0.9.95",
           "date": "2026-11-01",
@@ -95,15 +104,6 @@
           "localizedDescription": "# What's New\r\n\r\n## Reader\r\n\r\n* **Reliable Resume to Saved Position** :\r\n  * Reopening a chapter in continuous vertical reading now jumps directly and instantly to the page where you left off, even before all images have finished loading.\r\n  * Eliminated the issue where the reader would land on a neighboring page or spinner instead of the correct saved position.\r\n\r\n* **Smoother Zoomed Panning & Inertia** (#1021):\r\n  * Dragging a zoomed page now follows your finger precisely using real movement delta instead of an accumulated offset, making panning far more responsive.\r\n  * Flinging a zoomed page now carries natural momentum with a longer, smoother coast animation.\r\n  * Overscrolling past the edge of a zoomed page automatically transfers the momentum to the page list scroll, allowing seamles…",
           "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.7/Mangayomi-v0.9.7-ios.ipa",
           "size": 114301894,
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.9.6",
-          "buildVersion": "0.9.6",
-          "date": "2026-09-19",
-          "localizedDescription": "# What's New\r\n\r\n## 📖 Reader & Manga\r\n\r\n* **Intelligent Double-Page Spreads & RTL Reading** (#1018, #1008):\r\n  * Wide and landscape double-page spreads are now shown seamlessly on their own full-width screen instead of being awkwardly paired with single pages.\r\n  * Switching between single and double-page view, rotating your device, or changing reading modes no longer resets your progress back to chapter 1.\r\n  * Resuming chapters in Right-to-Left (manga) reading mode now starts in the correct direction without layout flipping.\r\n* **Instant Border Cropping & Cache Improvements**:\r\n  * Turning border crop on or off in Webtoon / continuous reading now applies instantly without re-downloading the images.\r\n  * Fixed an issue where resuming a chapter at a saved page could cause an infinite loadin…",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.6/Mangayomi-v0.9.6-ios.ipa",
-          "size": 114296014,
           "minOSVersion": "13.0"
         }
       ]
