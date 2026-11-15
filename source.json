@@ -242,11 +242,20 @@
       "developerName": "gapul (self-build)",
       "subtitle": "Live camera as ASCII art",
       "localizedDescription": "カメラ映像をリアルタイムに ASCII アートで描く。Rosé Pine の配色、Metal で描画。列数・しきい値・反転・ハイパスを調整でき、シャッターで画面サイズの PNG を写真に保存する。",
-      "iconURL": "https://github.com/gapul/altstore-source/releases/download/asciicam-0.1.0/asciicam.png",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/asciicam-0.1.1/asciicam.png",
       "tintColor": "#EBBCBA",
       "category": "photo-video",
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.1.1",
+          "buildVersion": "2",
+          "date": "2026-11-15",
+          "localizedDescription": "アプリアイコンを追加。",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/asciicam-0.1.1/ASCIICam-unsigned.ipa",
+          "size": 169308,
+          "minOSVersion": "26.0"
+        },
         {
           "version": "0.1.0",
           "buildVersion": "1",
