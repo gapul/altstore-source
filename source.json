@@ -266,6 +266,28 @@
           "minOSVersion": "26.0"
         }
       ]
+    },
+    {
+      "name": "PixEz",
+      "bundleIdentifier": "com.perol.pixez",
+      "developerName": "Notsfsssf (upstream CI build)",
+      "subtitle": "pixiv クライアント",
+      "localizedDescription": "PixEz — Flutter 製の pixiv クライアント。新着・ランキング・検索・ブックマーク・作者/タグのミュート・一括保存。上流 Notsfsssf/pixez-flutter の CI が出す無署名 ipa をそのまま載せたもの（日本の App Store では配信されていない）。",
+      "iconURL": "https://github.com/gapul/altstore-source/releases/download/pixez-1.9.89/pixez-icon.png",
+      "tintColor": "#0096FA",
+      "category": "entertainment",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.9.89",
+          "buildVersion": "514",
+          "date": "2026-11-15",
+          "localizedDescription": "PixEz (pixiv client) — unsigned iOS build for AltStore, taken unchanged from the upstream CI artifact (Notsfsssf/pixez-flutter, build_ios.yml run 41314672755, master 2026-11-01). arm64 device, iOS 15+.",
+          "downloadURL": "https://github.com/gapul/altstore-source/releases/download/pixez-1.9.89/PixEz-unsigned.ipa",
+          "size": 17735324,
+          "minOSVersion": "15.0"
+        }
+      ]
     }
   ],
   "news": []

@@ -43,6 +43,7 @@ TRACK: dict[str, dict[str, str]] = {
     "com.bilingify.readest": {"repo": "gapul/altstore-source", "tag_prefix": "readest-"},
     "com.audiobookshelf.app": {"repo": "gapul/altstore-source", "tag_prefix": "abs-"},
     "net.gapul.asciicam": {"repo": "gapul/altstore-source", "tag_prefix": "asciicam-"},
+    "com.perol.pixez": {"repo": "gapul/altstore-source", "tag_prefix": "pixez-"},
 }
 
 # Old entries stay so AltStore can show what came before, but not for ever.
