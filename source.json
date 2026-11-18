@@ -18,6 +18,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "2.6.173",
+          "buildVersion": "2.6.173",
+          "date": "2026-07-28",
+          "localizedDescription": "Auto-built from keepassium/KeePassium 2.6.173. net.gapul namespace, Intune removed, premium (Pro/prepaid), unsigned for SideStore.",
+          "downloadURL": "https://github.com/gapul/keepassium-ios/releases/download/2.6.173/KeePassiumPro-net.gapul.ipa",
+          "size": 24669059,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "2.6",
           "buildVersion": "173",
           "date": "2026-07-30",
