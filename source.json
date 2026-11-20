@@ -71,6 +71,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.97",
+          "buildVersion": "0.9.97",
+          "date": "2026-11-20",
+          "localizedDescription": "## What's Changed\n* fix(sync): one row over a limit no longer stops every sync by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1168\n* fix(app): keep open pages when the lock screen comes and goes by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1172\n* fix(library): the extension filter offers every extension again by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1173\n* fix(linux): a failed Discord connection no longer crashes the app by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1175\n* fix(sync-server): `pair` opens pairing again by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1177\n* fix(desktop): the window no longer comes back fullscreen by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1178\n* fix(reader): the ne…",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.97/Mangayomi-v0.9.97-ios.ipa",
+          "size": 117415847,
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "0.9.96",
           "buildVersion": "0.9.96",
           "date": "2026-11-14",
@@ -104,15 +113,6 @@
           "localizedDescription": "## What's Changed\r\n* fix(tracker): improve Trakt.tv multi-season mapping, watchlist, and ratings sync by @lee-gangjin in https://github.com/kodjodevf/mangayomi/pull/1024\r\n* feat(tracker): Add backlog sections (Plan to read/Watchlist), handle AniList 429 rate limits, and prioritize Trakt series by @lee-gangjin in https://github.com/kodjodevf/mangayomi/pull/1030\r\n* fix(mihon): use the Cloudflare proxy for extension-server sources by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1026\r\n* fix(mihon): identify which source of an extension a call is for by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1027\r\n* Improve LNReader extension compatibility\r\n* fix: stale chapter page lists and add WebP decoding on Linux by @MenaHere in https://github.com/kodjodevf/…",
           "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.8/Mangayomi-v0.9.8-ios.ipa",
           "size": 114518028,
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.9.7",
-          "buildVersion": "0.9.7",
-          "date": "2026-09-22",
-          "localizedDescription": "# What's New\r\n\r\n## Reader\r\n\r\n* **Reliable Resume to Saved Position** :\r\n  * Reopening a chapter in continuous vertical reading now jumps directly and instantly to the page where you left off, even before all images have finished loading.\r\n  * Eliminated the issue where the reader would land on a neighboring page or spinner instead of the correct saved position.\r\n\r\n* **Smoother Zoomed Panning & Inertia** (#1021):\r\n  * Dragging a zoomed page now follows your finger precisely using real movement delta instead of an accumulated offset, making panning far more responsive.\r\n  * Flinging a zoomed page now carries natural momentum with a longer, smoother coast animation.\r\n  * Overscrolling past the edge of a zoomed page automatically transfers the momentum to the page list scroll, allowing seamles…",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.7/Mangayomi-v0.9.7-ios.ipa",
-          "size": 114301894,
           "minOSVersion": "13.0"
         }
       ]
